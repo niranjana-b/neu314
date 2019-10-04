@@ -58,4 +58,7 @@ function rotate_photo(photo, pixels)
     photo_shifted = circshift(red, (pixels,0))
     return imshow(photo_shifted)
 end
-rotate_photo("/Users/pipi/Downloads/el-capitan.png", 180)
+imgrotated = rotate_photo("/Users/pipi/Downloads/el-capitan.png", 180)
+figure(figsize=[5,5])
+subplot(1,2,1); imshow(image); title("Original El-Capitan"); axis("off")
+subplot(1,2,2); imshow(imgrotated); title("New El-Capitan_2"); axis("off")
