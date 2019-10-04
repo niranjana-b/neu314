@@ -1,0 +1,10 @@
+#1a
+#Loading the image onto Julia
+image = imread("/Users/pipi/Downloads/el-capitan.png")
+using PyPlot
+img = imshow(convert(Array{Float32,3}, image))
+
+
+#1b
+
+println("Reset with git reset --mixed")
