@@ -6,5 +6,56 @@ img = imshow(convert(Array{Float32,3}, image))
 
 
 #1b
+println("BUG BUG BUG")
 
-println("Reset with git reset --mixed")
+#1b
+function string_func(string)
+    imgnew = imread(string)
+    imshow(imgnew)
+    R = imgnew[:, :, 1]
+    G = imgnew[:, :, 2]
+    B = imgnew[:, :, 3]
+    return(R,B,G)
+end
+string_func("/Users/pipi/Downloads/el-capitan.png")
+
+#1c
+println("BUG BUG BUG")
+function string_func(string)
+    imgnew = imread(string)
+    imshow(imgnew)
+    R = imgnew[:, :, 1]
+    G = imgnew[:, :, 2]
+    B = imgnew[:, :, 3]
+    println("BUG BUG BUG")
+end
+
+#1d
+function string_func(string)
+    imgnew = imread(string)
+    imshow(imgnew)
+    R = imgnew[:, :, 1]
+    G = imgnew[:, :, 2]
+    B = imgnew[:, :, 3]
+    println("Reset with git reset--mixed")
+end
+
+#1e
+img1 = zeros(360,640,3)
+
+img1[:,:,1] = image[:, :, 2]
+img1[:,:,2] = image[:, :, 3]
+img1[:,:,3] = image[:, :, 1]
+figure(figsize=[5,5])
+subplot(1,2,1); imshow(image); title("Original El-Capitan"); axis("off")
+subplot(1,2,2); imshow(img1); title("New El-Capitan"); axis("off")
+
+
+#1B
+function rotate_photo(photo, pixels)
+    photo = imread(photo)
+    red = photo[:,:,1]
+    photo_shifted = circshift(red, (pixels,0))
+    return imshow(photo_shifted)
+end
+rotate_photo("/Users/pipi/Downloads/el-capitan.png", 180)
